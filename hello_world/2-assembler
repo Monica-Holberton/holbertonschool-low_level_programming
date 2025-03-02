@@ -1,2 +1,2 @@
 #!/bin/bash
-OUTPUT_FILE="${CFILE%.c}.s"
+gcc -S "$CFILE" -o "$CFILE.s"
