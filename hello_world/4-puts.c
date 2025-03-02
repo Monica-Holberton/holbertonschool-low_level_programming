@@ -1,9 +1,10 @@
 #include <stdio.h>
-description
+
 /*
  * This is the main function
  * it returns 0
  * it prints a string
+ * description
  */
 
 int main(void)
