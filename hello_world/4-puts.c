@@ -1,10 +1,7 @@
 #include <stdio.h>
-
-/*
- * This is the main function
- * it returns 0
- * it prints a string
- * description
+/**
+ * main - Entry point
+ * Return: Always 0 (Success)
  */
 
 int main(void)
