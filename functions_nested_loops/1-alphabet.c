@@ -1,19 +1,17 @@
 #include "main.h"
 
-\**
-* print_alphabet - Entry point
-* Description: print strinf (loop & putchar)
-*
-*/
-
+/**
+ * print_alphabet - Prints the alphabet in lowercase followed by a new line
+ */
 void print_alphabet(void)
 {
-	char s = 'a';
+	char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
+	int i = 0;
 
-	while (s <= 'z')
+	while (alphabet[i] != '\0')
 	{
-		_putchar(s);
-		s++;
+		_putchar(alphabet[i]);
+		i++;
 	}
 	_putchar('\n');
 }
