@@ -1,10 +1,10 @@
-#include <stdio.h>
+#include <main.h>
 
 void print_alphabet(){
 	char s='a';
 	while(s<='z'){
-		putchar(s);
+		_putchar(s);
 		s++;
 	}
-	putchar('\n');
+	_putchar('\n');
 }
