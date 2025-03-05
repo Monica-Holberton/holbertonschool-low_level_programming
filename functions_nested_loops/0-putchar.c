@@ -1,22 +1,21 @@
-#include <stdio.h>
-/**
- * main - Entry point
- * Description: print strinf using loop & putchar
- *
- * Return: Always 0 (success)
- */
+#include "main.h"
 
+/**
+ * main - Prints "_putchar" followed by a new line
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
+char str[] = "_putchar";
+int i = 0;
 
-    char str[] = "_putchar";
-    int i;
+while (str[i] != '\0')
+{
+_putchar(str[i]);
+i++;
+}
+_putchar('\n');
 
-     while (str[i] != '\0')
-    {
-        putchar(str[i]);
-    }
-    putchar('\n');
-
-    return (0);
+return (0);
 }
