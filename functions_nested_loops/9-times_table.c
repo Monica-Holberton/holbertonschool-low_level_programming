@@ -5,23 +5,23 @@
  */
 void times_table(void)
 {
-int row, col, product;
+int i, j, result;
 
-for (row = 0; row <= 9; row++)
+for (i = 0; i <= 9; i++)
 {
-for (col = 0; col <= 9; col++)
+for (j = 0; j <= 9; j++)
 {
-product = row * col;
+result = i * j;
 
-if (col > 0)
+if (j > 0)
 {
 _putchar(',');
 _putchar(' ');
-if (product < 10)
-_putchar(' '); /* Align single-digit numbers */
+if (result < 10)
+_putchar(' ');
 }
-_putchar((product / 10) ? (product / 10) + '0' : ' '); /* Tens place */
-_putchar((product % 10) + '0'); /* Ones place */
+_putchar((result / 10) ? (result / 10) + '0' : ' ');
+_putchar((result % 10) + '0');
 }
 _putchar('\n');
 }
