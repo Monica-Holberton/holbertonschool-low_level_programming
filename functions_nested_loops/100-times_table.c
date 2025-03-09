@@ -2,28 +2,53 @@
 #include <stdio.h>
 
 /**
- * print_times_table - Prints the n times table, starting with 0
- * @n: The number of times table (0 ≤ n ≤ 15)
+ * print_times_table - Prints the n times table, starting with 0.
+ * @n: The number defining the size of the times table (0 ≤ n ≤ 15).
+ *
+ * Description: If 'n' is out of range (n < 0 or n > 15),
+ * the function does not print anything.
+ *
  */
 void print_times_table(int n)
 {
-int i, j, sum;
-
+int r, c, sum;
 if (n < 0 || n > 15)
-return (0);
+return;
 
-for (i = 0; i <= n; i++)
+for (r = 0; r <= n; r++)
 {
-for (j = 0; j <= n; j++)
+for (c = 0; c <= n; c++)
 {
-sum = i * j;
+sum = r * c;
 
-if (j == 0)
-printf("%d", sum);
+if (c == 0)
+_putchar(sum + '0');
 else
-printf(", %3d", sum);
+{
+_putchar(',');
+_putchar(' ');
 
+if (sum < 10)
+{
+_putchar(' ');
+_putchar(' ');
+_putchar(sum + '0');
 }
-printf("\n");
+else if (sum < 100)
+{
+_putchar(' ');
+_putchar((sum / 10) + '0');
+_putchar((sum % 10) + '0');
+}
+else
+{
+_putchar((sum / 100) + '0');
+_putchar(((sum / 10) % 10) + '0');
+_putchar((sum % 10) + '0');
 }
 }
+}
+_putchar('\n');
+}
+}
+
