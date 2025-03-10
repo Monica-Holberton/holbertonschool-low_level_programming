@@ -1,13 +1,32 @@
-#include <stdio.h>
 #include "main.h"
+#include <stdio.h>
 
+/**
+ * main - Check the _isupper function.
+ *
+ * Return: Always 0.
+ */
 int main(void)
 {
-    char ch1 = 'A';
-    char ch2 = 'm';
-    
-    printf("%c: %d\n", ch1, _isupper(ch1)); / Expected output: A: 1
-    printf("%c: %d\n", ch2, _isupper(ch2)); / Expected output: m: 0
-    
-    return (0);
+char c;
+
+c = 'A';
+printf("%c: %d\n", c, _isupper(c));
+
+c = 'a';
+printf("%c: %d\n", c, _isupper(c));
+
+c = 'Z';
+printf("%c: %d\n", c, _isupper(c));
+
+c = 'z';
+printf("%c: %d\n", c, _isupper(c));
+
+c = '0';
+printf("%c: %d\n", c, _isupper(c));
+
+c = '@';
+printf("%c: %d\n", c, _isupper(c));
+
+return (0);
 }
