@@ -12,7 +12,7 @@ int temp;
 temp = *a;
 *a = *b;
 *b = temp;
-   
+
 int a;
 int b;
 
