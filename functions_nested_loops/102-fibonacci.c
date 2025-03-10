@@ -16,6 +16,7 @@ int main(void)
 int count = 0;
 long old = 0;
 long prev = 1;
+long result;
 
 
 while
@@ -23,12 +24,12 @@ while
 
 printf("%lu", old + prev);
 old = prev;
-prev = current;
-putchar(' , ');
+prev = result;
+putchar(',');
 count++;
 
 }
-ptrintf("The size of long %ld", sizeof(x));
+printf("The size of long %ld", sizeof('x'));
 putchar('\n');
 return (0);
 }
