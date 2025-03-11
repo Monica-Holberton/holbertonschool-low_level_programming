@@ -2,15 +2,22 @@
 #include <stdio.h>
 
 /**
- * _puts - Prints a string followed by a new line to stdout.
- * @str: Pointer to the string to print.
+ * _puts - Prints a string.
+ * @str: The string to print.
  */
 void _puts(char *str)
 {
-while (*str != '\0')
+while (*str)
 {
-putchar(*str);
+_putchar(*str);
 str++;
 }
-putchar('\n');
+_putchar('\n');
+}
+int main(void)
+{
+_puts("Holberton!");
+_puts("Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+_puts("");
+return (0);
 }
