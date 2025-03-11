@@ -2,20 +2,15 @@
 #include "main.h"
 
 /**
- * main - Entry point of the program
+ * main - check the code
  *
- * This function tests the swap_int function by swapping two integers
- * and printing their values before and after swapping.
- *
- * Return: Always 0 (Success)
+ * Return: Always 0.
  */
 int main(void)
 {
-int x = 10, y = 20;
+    char *str;
 
-printf("Before swap: x = %d, y = %d\n", x, y);
-swap_int(&x, &y);
-printf("After swap: x = %d, y = %d\n", x, y);
-
-return (0);
+    str = "I do not fear computers. I fear the lack of them - Isaac Asimov";
+    _puts(str);
+    return (0);
 }

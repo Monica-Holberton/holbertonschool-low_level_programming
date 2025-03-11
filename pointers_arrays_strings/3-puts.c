@@ -12,12 +12,12 @@ while (*str)
 _putchar(*str);
 str++;
 }
+
 _putchar('\n');
 }
 int main(void)
 {
 _puts("Holberton!");
-_puts("Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
 _puts("");
 return (0);
 }
