@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * _puts - Prints a string.
@@ -14,10 +13,4 @@ str++;
 }
 
 _putchar('\n');
-}
-int main(void)
-{
-_puts("Holberton!");
-_puts("");
-return (0);
 }
