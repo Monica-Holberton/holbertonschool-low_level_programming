@@ -2,15 +2,14 @@
 
 /**
  * _atoi - Converts a string to an integer.
- * @s: The input string.
+ * @s: The string to be converted.
  *
  * Return: The converted integer.
  */
 int _atoi(char *s)
 {
 int sign = 1;
-int result = 0;
-int found_number = 0;
+unsigned int num = 0;
 
 while (*s)
 {
@@ -18,14 +17,14 @@ if (*s == '-')
 sign *= -1;
 else if (*s >= '0' && *s <= '9')
 {
-result = result * 10 + (*s - '0');
-found_number = 1;
+num = num * 10 + (*s - '0');
 }
-else if (found_number)
+else if (num > 0)
 break;
-
 s++;
 }
 
-return (result *sign);
+if (sign < 0)
+return (-num);
+return (num);
 }
