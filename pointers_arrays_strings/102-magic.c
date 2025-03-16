@@ -26,9 +26,11 @@ p = &n;
 * - don’t change the spaces to tabs!
 * - you are allowed to use the standard library
 */
-*(p + 5) = 98; /* Line 19: Modify the correct memory location */
+*(p + 5) = 98;
 
-printf("a[2] = %d\n", a[2]);
+printf("a[2] = ");
+printf("%d", a[2]);
+printf("\n");
 
 return (0);
 }
