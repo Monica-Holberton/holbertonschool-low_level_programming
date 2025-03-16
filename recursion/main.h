@@ -3,7 +3,7 @@
 
 void swap_int(int *a, int *b);
 int _putchar(char c);
-int _puts_recursion(str);
+int _puts_recursion(int);
 void _puts_recursion(char *s);
 void print_alphabet(void);
 void print_alphabet_x10(void);
