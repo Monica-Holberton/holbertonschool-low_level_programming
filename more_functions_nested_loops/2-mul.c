@@ -2,6 +2,7 @@
 
 /**
  * mul - Multiplies two integers
+ * _isupper - Checks if a character is an uppercase letter
  * @a: The first integer
  * @b: The second integer
  *
