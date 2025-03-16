@@ -3,9 +3,6 @@
 /**
  * _puts_recursion - Recursively prints a string followed by a new line.
  * @s: The string to be printed.
- *
- * Description: This function prints a string character by character
- * recursively until it reaches the null terminator, then prints a newline.
  */
 void _puts_recursion(char *s)
 {
