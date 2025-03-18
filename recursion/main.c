@@ -1,17 +1,22 @@
-#include <stdio.h>
 #include "main.h"
+#include <stdio.h>
 
 /**
  * main - check the code
  *
  * Return: Always 0.
  */
-
 int main(void)
 {
-printf("%d\n", is_palindrome("madam"));
-printf("%d\n", is_palindrome("hello"));
-printf("%d\n", is_palindrome("racecar"));
-printf("%d\n", is_palindrome(""));
-return (0);
+    int r;
+
+    r = factorial(1);
+    printf("%d\n", r);
+    r = factorial(5);
+    printf("%d\n", r);
+    r = factorial(10);
+    printf("%d\n", r);
+    r = factorial(-1024);
+    printf("%d\n", r);
+    return (0);
 }
