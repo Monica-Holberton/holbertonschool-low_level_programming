@@ -15,5 +15,6 @@ int add(int, int);
 void print_to_98(int n);
 void print_times_table(int n);
 int _isupper(int c);
+int _pow_recursion(int x, int y);
 
 #endif /* MAIN_H */
