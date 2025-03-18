@@ -18,7 +18,7 @@ return (-1);
 if (i * i == n)
 return (i);
 
-return (find_sqrt(n, i - 1));
+return (find_sqrt(n, i + 1));
 }
 
 /**
