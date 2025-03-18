@@ -10,17 +10,13 @@ int main(void)
 {
     int r;
 
-    r = _sqrt_recursion(1);
+    r = factorial(1);
     printf("%d\n", r);
-    r = _sqrt_recursion(1024);
+    r = factorial(5);
     printf("%d\n", r);
-    r = _sqrt_recursion(16);
+    r = factorial(10);
     printf("%d\n", r);
-    r = _sqrt_recursion(17);
-    printf("%d\n", r);
-    r = _sqrt_recursion(25);
-    printf("%d\n", r);
-    r = _sqrt_recursion(-1);
+    r = factorial(-1024);
     printf("%d\n", r);
     return (0);
 }

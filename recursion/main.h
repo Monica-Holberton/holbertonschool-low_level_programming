@@ -17,5 +17,6 @@ void print_times_table(int n);
 int _isupper(int c);
 int _pow_recursion(int x, int y);
 int _sqrt_recursion(int n);
+int factorial(int n);
 
 #endif /* MAIN_H */
