@@ -12,8 +12,8 @@
   * If the program is renamed, the new name will be printed automatically.
   *
   * Parameters:
-  *   argc - The number of command-line arguments (unused in this program).
-  *   argv - An array of strings containing the program name and arguments.
+  * argc - The number of command-line arguments (unused in this program).
+  * argv - An array of strings containing the program name and arguments.
   *
   * Returns:
   *   0 - Indicates successful execution.
