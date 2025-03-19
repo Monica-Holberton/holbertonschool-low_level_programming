@@ -20,5 +20,7 @@ int _sqrt_recursion(int n);
 int factorial(int n);
 int is_palindrome(char *s);
 int wildcmp(char *s1, char *s2);
+int main(int argc, char *argv[])
+int main(int argc, char **argv)
 
 #endif /* MAIN_H */
