@@ -6,6 +6,6 @@
  */
 int main(void)
 {
-more_numbers();
+mul();
 return (0);
 }
