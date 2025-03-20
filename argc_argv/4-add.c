@@ -1,48 +1,58 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-#define UNUSED(x) (void)(x)
 
 /**
 * is_number - Checks if a string contains only digit characters.
-* @str: string to check
+* @s: The string to check.
+*
 * Return: 1 if the string contains only digits, 0 otherwise.
 */
-int is_number(char *str)
+int is_number(char *s)
 {
 int i = 0;
-
-for (int i = 0; str[i] != '\0'; i++)
+for (; s[i] != '\0'; i++)
 {
-if (!isdigit(str[i]))
+if (!isdigit(s[i]))
+{
 return (0);
+}
 }
 return (1);
 }
 
 /**
- * main - main function
- * @argc: argumentc
- * @argv: vector of arguments
- *Return: always 0
- */
+* main - Adds positive numbers from command-line arguments.
+* @argc: Argument count.
+* @argv: Argument values.
+*
+* Return: 0 on success, 1 on error.
+*/
 int main(int argc, char *argv[])
 {
-int sum = 0;
-if (argc == 1)
+int i;
+int result = 0;
+
+if (argc > 1)
 {
-printf("0\n");
-return (0);
+for (i = 1; i < argc; i++)
+{
+if (is_number(argv[i]))
+{
+result += atoi(argv[i]);
 }
-for (int i = 1; i < argc; i++)
-{
-if (!is_number(argv[i]))
+else
 {
 printf("Error\n");
 return (1);
 }
-sum += atoi(argv[i]);
 }
-printf("%d\n", sum);
+printf("%d\n", result);
 return (0);
+}
+else
+{
+printf("0\n");
+return (0);
+}
 }
