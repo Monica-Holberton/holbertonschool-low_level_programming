@@ -1,11 +1,13 @@
 #include "main.h"
-/**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
- */
 
+/**
+ * mul - Multiplies two integers.
+ * @a: First integer.
+ * @b: Second integer.
+ *
+ * Return: The product of a and b.
+ */
 int mul(int a, int b)
 {
-return (a * b);
+    return (a * b);
 }
