@@ -4,8 +4,8 @@
  *
  * Return: Always 0.
  */
-int main(void)
+
+int mul(int a, int b)
 {
-mul();
-return (0);
+return (a * b);
 }
