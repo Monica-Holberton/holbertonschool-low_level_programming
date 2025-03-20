@@ -1,13 +1,11 @@
 #include "main.h"
-#include <stdio.h>
-
 /**
- * main - Entry point
- * Return: Always 0 (Success)
+ * main - check the code for Holberton School students.
+ *
+ * Return: Always 0.
  */
 int main(void)
 {
-int result = _isdigit('5');
-printf("%d\n", result);
+more_numbers();
 return (0);
 }
