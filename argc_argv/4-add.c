@@ -5,12 +5,13 @@
 
 /**
 * is_number - Checks if a string contains only digit characters.
-* @str: The string to check.
- * Return: boolean
- */
-
+* @str: string to check
+* Return: 1 if the string contains only digits, 0 otherwise.
+*/
 int is_number(char *str)
 {
+int i = 0;
+
 for (int i = 0; str[i] != '\0'; i++)
 {
 if (!isdigit(str[i]))
@@ -25,7 +26,6 @@ return (1);
  * @argv: vector of arguments
  *Return: always 0
  */
-
 int main(int argc, char *argv[])
 {
 int sum = 0;
