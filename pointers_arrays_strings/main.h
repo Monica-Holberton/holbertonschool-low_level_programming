@@ -18,5 +18,6 @@ void print_times_table(int n);
 int _isupper(int c);
 char *cap_string(char *);
 void print_number(int n);
+char *infinite_add(char *n1, char *n2, char *r, int size_r);
 
 #endif /* MAIN_H */
