@@ -1,15 +1,14 @@
 #include "main.h"
-#include <limits.h>
+#include <stdio.h>
 
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
 int main(void)
 {
-    print_number(INT_MIN);
-    _putchar('\n');
-    print_number(-123);
-    _putchar('\n');
-    print_number(0);
-    _putchar('\n');
-    print_number(456);
-    _putchar('\n');
+    printf("%d\n", mul(98, 1024));
+    printf("%d\n", mul(-402, 4096));
     return (0);
 }
