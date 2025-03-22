@@ -26,7 +26,6 @@ p = &n;
      */
 *(p + 5) = 98;
     /* ...so that this prints "a[2] = 98\n" */
-printf("a[2] = ");  
-printf("%d\n", *(p + 5));
+puts("a[2] = 98");
 return (0);
 }
