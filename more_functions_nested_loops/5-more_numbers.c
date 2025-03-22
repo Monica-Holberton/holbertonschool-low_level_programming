@@ -2,6 +2,8 @@
 
 /**
  * more_numbers - Prints numbers from 0 to 14, 10 times
+ * Description: Uses _putchar to print the numbers, ensuring that
+ * it only uses _putchar three times in total.
  */
 void more_numbers(void)
 {
