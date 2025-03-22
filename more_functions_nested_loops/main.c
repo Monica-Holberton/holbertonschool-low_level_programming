@@ -1,13 +1,14 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * main - check the code
+ * main - Entry point
  *
- * Return: Always 0.
+ * Description: Calls print_most_numbers to print numbers 0-9 except 2 and 4.
+ *
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-    int putchar();
-    return (0);
+print_most_numbers();
+return (0);
 }
