@@ -21,11 +21,12 @@ p = &n;
      * - you are not allowed to modify the variable p
      * - you can only write one statement
      * - you are not allowed to use ,
-     * - you are not allowed to code anything else than the line code
+     * - you are not allowed to code anything else than the line of code
      * - you are allowed to use the standard library
      */
 *(p + 5) = 98;
     /* ...so that this prints "a[2] = 98\n" */
-printf("a[2] = %d\n", a[2]);
+printf("a[2] = ");  
+printf("%d\n", *(p + 5));
 return (0);
 }
