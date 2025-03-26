@@ -10,7 +10,7 @@
  *
  * Return: Nothing.
  */
-void simple_print_buffer(char *buffer, unsigned int size)
+void simple_print_buffer(int *buffer, unsigned int size)
 {
     unsigned int i;
 
@@ -32,23 +32,16 @@ void simple_print_buffer(char *buffer, unsigned int size)
 }
 
 /**
- * main - check the code for
+ * main - check the code
  *
  * Return: Always 0.
  */
 int main(void)
 {
-    char *p;
-    int i;
+    int *a;
 
-    p = malloc(sizeof(char) * 10);
-    p = _realloc(p, sizeof(char) * 10, sizeof(char) * 98);
-    i = 0;
-    while (i < 98)
-    {
-        p[i++] = 98;
-    }
-    simple_print_buffer(p, 98);
-    free(p);
+    a = array_range(0, 10);
+    simple_print_buffer(a, 11);
+    free(a);
     return (0);
 }
