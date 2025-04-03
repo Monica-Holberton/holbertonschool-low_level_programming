@@ -2,6 +2,7 @@
 #define DOG_H
 
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * struct dog - Defines a dog's characteristics.
@@ -11,13 +12,15 @@
  */
 struct dog
 {
-char *name;
-float age;
-char *owner;
+    char *name;
+    float age;
+    char *owner;
 };
 
 /* Define dog_t as a new name for struct dog */
 typedef struct dog dog_t;
 
-#endif /* DOG_H */
+/* Function prototype */
+dog_t *new_dog(char *name, float age, char *owner);
 
+#endif
