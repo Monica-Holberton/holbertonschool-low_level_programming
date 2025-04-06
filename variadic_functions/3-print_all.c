@@ -2,52 +2,50 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-/**
- * print_all - Prints anything based on the format.
- * @format: The format string containing the types of arguments.
- *
- * Return: Nothing.
- */
+#define SUCCESS 0
 
-void print_all(const char * const format, ...)
+/**
+ * print_all - Prints anything based on format string
+ * @format: List of types of arguments
+ * Return: SUCCESS
+ */
+int print_all(const char * const format, ...)
 {
 va_list args;
-unsigned int i = 0;
-char *str;
-char current;
+int i = 0, printed = 0;
+char *s, *sep = "";
 
 va_start(args, format);
-
 while (format && format[i])
 {
-current = format[i];
-
-if (current == 'c')  /*Print char*/
-printf("%c", va_arg(args, int));
-
-else if (current == 'i')  /*Print integer*/
-printf("%d", va_arg(args, int));
-
-else if (current == 'f')  /* Print float*/
-printf("%f", va_arg(args, double));
-
-else if (current == 's')  /*Print string, or (nil) if NULL*/
+switch (format[i])
 {
-str = va_arg(args, char *);
-if (str == NULL)
-printf("(nil)");
-
-else
-printf("%s", str);
+case 'c':
+printf("%s%c", sep, va_arg(args, int));
+printed = 1;
+break;
+case 'i':
+printf("%s%d", sep, va_arg(args, int));
+printed = 1;
+break;
+case 'f':
+printf("%s%f", sep, va_arg(args, double));
+printed = 1;
+break;
+case 's':
+s = va_arg(args, char *);
+if (!s)
+s = "(nil)";
+printf("%s%s", sep, s);
+printed = 1;
+break;
 }
-
-/*Print separator if it's not the last character*/
-if (format[i + 1] != '\0' && (current == 'c' || current == 'i' || current == 'f' || current == 's'))
-printf(", ");
-
+if (printed)
+sep = ", ";
+printed = 0;
 i++;
 }
-
 va_end(args);
 printf("\n");
+return (SUCCESS);
 }
