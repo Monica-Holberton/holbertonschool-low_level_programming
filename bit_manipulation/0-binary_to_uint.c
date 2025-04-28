@@ -1,9 +1,10 @@
 #include "main.h"
+#include <stddef.h>
 
 /**
  * binary_to_uint - converts a binary number to an unsigned int.
  * @b: string of 0 and 1 characters
- * 
+ *
  * Return: the converted number, or 0 if there is one or more
  *         invalid characters in the string or if `b` is NULL.
  */
