@@ -13,10 +13,7 @@
 */
 void print_error(int exit_code, const char *message, const char *arg)
 {
-if (arg)
 dprintf(STDERR_FILENO, message, arg);
-else
-dprintf(STDERR_FILENO, "%s", message);
 exit(exit_code);
 }
 
@@ -49,8 +46,8 @@ print_error(99, "Error: Can't write to %s\n", file_to);
 * @file_from: Name of the source file.
 * @file_to: Name of the destination file.
 */
-void copy_content(int fd_from, int fd_to,
-const char *file_from, const char *file_to)
+void copy_content(int fd_from, int fd_to, const char *file_from,
+const char *file_to)
 {
 ssize_t rd, wr;
 char buffer[BUFFER_SIZE];
@@ -65,6 +62,8 @@ close(fd_to);
 print_error(99, "Error: Can't write to %s\n", file_to);
 }
 }
+
+/* Check if read returned -1 (indicating an error) */
 if (rd == -1)
 {
 close(fd_from);
@@ -99,7 +98,7 @@ int main(int argc, char *argv[])
 int fd_from, fd_to;
 
 if (argc != 3)
-print_error(97, "Usage: cp file_from file_to\n", NULL);
+print_error(97, "Usage: %s file_from file_to\n", argv[0]);
 
 open_files(argv[1], argv[2], &fd_from, &fd_to);
 copy_content(fd_from, fd_to, argv[1], argv[2]);
@@ -107,4 +106,3 @@ close_files(fd_from, fd_to);
 
 return (0);
 }
-
