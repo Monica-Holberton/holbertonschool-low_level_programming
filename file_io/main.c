@@ -1,22 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
 
 /**
- * main - check the code
+ * main - Entry point to test the cp program
+ * @argc: number of arguments
+ * @argv: array of argument strings
  *
  * Return: Always 0.
  */
-int main(int ac, char **av)
+int main(int argc, char *argv[])
 {
-    int res;
+    extern int _cp(int argc, char *argv[]);
 
-    if (ac != 3)
-    {
-        dprintf(2, "Usage: %s filename text\n", av[0]);
-        exit(1);
-    }
-    res = append_text_to_file(av[1], av[2]);
-    printf("-> %i)\n", res);
-    return (0);
+    return (_cp(argc, argv));
 }
