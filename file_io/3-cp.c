@@ -1,82 +1,52 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
-#include <sys/stat.h>
-
-#define BUFFER_SIZE 1024
+#include <stdlib.h>
 
 /**
-* print_error - Prints error message to stderr and exits.
-* @exit_code: Exit code to use.
-* @msg: Error message.
-* @file: File name involved in the error.
-*/
-void print_error(int exit_code, const char *msg, const char *file)
-{
-dprintf(STDERR_FILENO, msg, file);
-exit(exit_code);
-}
-
-/**
-* copy_file - Copies the content of one file to another.
-* @file_from: Source file name.
-* @file_to: Destination file name.
-*/
-void copy_file(const char *file_from, const char *file_to)
-{
-int fd_from, fd_to;
-ssize_t bytes_read, bytes_written;
-char buffer[BUFFER_SIZE];
-
-fd_from = open(file_from, O_RDONLY);
-if (fd_from == -1)
-print_error(98, "Error: Can't read from file %s\n", file_from);
-
-fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
-if (fd_to == -1)
-{
-close(fd_from);
-print_error(99, "Error: Can't write to %s\n", file_to);
-}
-
-while ((bytes_read = read(fd_from, buffer, BUFFER_SIZE)) > 0)
-{
-bytes_written = write(fd_to, buffer, bytes_read);
-if (bytes_written != bytes_read)
-{
-close(fd_from);
-close(fd_to);
-print_error(99, "Error: Can't write to %s\n", file_to);
-}
-}
-
-if (bytes_read == -1)
-print_error(98, "Error: Can't read from file %s\n", file_from);
-
-if (close(fd_from) == -1)
-print_error(100, "Error: Can't close fd %d\n", file_from);
-
-if (close(fd_to) == -1)
-print_error(100, "Error: Can't close fd %d\n", file_to);
-}
-
-/**
-* main - Entry point.
-* @argc: Argument count.
-* @argv: Argument vector.
+* read_textfile - Reads a text file and prints it
+*                 to the POSIX standard output.
+* @filename: Pointer to the name of the file to read.
+* @letters: Number of letters to read and print.
 *
-* Return: 0 on success, exits otherwise.
+* Return: Actual number of letters it could read and print,
+*         or 0 if the file can't be opened/read, or if write fails.
 */
-int main(int argc, char *argv[])
+ssize_t read_textfile(const char *filename, size_t letters)
 {
-if (argc != 3)
+int file_d;
+ssize_t read_flag, write_flag;
+char *file_cp;
+
+if (filename == NULL)
+return (0);
+
+file_d = open(filename, O_RDONLY);
+if (file_d == -1)
+return (0);
+
+file_cp = malloc(sizeof(char) * letters);
+if (file_cp == NULL)
 {
-dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-exit(97);
+close(file_d);
+return (0);
 }
 
-copy_file(argv[1], argv[2]);
-
+read_flag = read(file_d, file_cp, letters);
+if (read_flag == -1)
+{
+free(file_cp);
+close(file_d);
 return (0);
+}
+
+write_flag = write(STDOUT_FILENO, file_cp, read_flag);
+free(file_cp);
+close(file_d);
+
+if (write_flag != read_flag)
+return (0);
+
+return (write_flag);
 }

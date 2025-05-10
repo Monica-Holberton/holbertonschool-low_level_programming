@@ -1,16 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/**
- * main - Entry point to test the cp program
- * @argc: number of arguments
- * @argv: array of argument strings
- *
- * Return: Always 0.
- */
-int main(int argc, char *argv[])
-{
-    extern int _cp(int argc, char *argv[]);
+ssize_t read_textfile(const char *filename, size_t letters);
 
-    return (_cp(argc, argv));
+/**
+ * main - Entry point to test read_textfile function
+ *
+ * Return: Always 0
+ */
+int main(void)
+{
+	ssize_t n;
+
+	n = read_textfile("test.txt", 1024);
+	printf("\n[Printed %ld characters]\n", n);
+	return (0);
 }
